@@ -28,7 +28,7 @@ jobs:
       - 
         name: Login to GitHub Container Registry
         run: | 
-          echo $GHRC_PAT | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          echo ${{ secrets.GHRC_PAT }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       - name: Build & Push Image
         run: |
           docker build . --tag ghcr.io/ebnerlena/node-postgres-sample:latest
