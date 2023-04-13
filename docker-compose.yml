@@ -1,0 +1,35 @@
+services:
+  node-server:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: database
+      DB_USER: todos
+      DB_PASSWORD: password
+      DB_NAME: todos
+      PORT: 3000
+    links:
+      - database
+    depends_on:
+      database:
+        condition: service_healthy
+      
+  database:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_USER: todos
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: todos
+    ports:
+      - "5432:5432"
+    healthcheck: # oder restart on failure würd des problem auch lösen
+      test: ["CMD-SHELL", "pg_isready", "-d", "todos"]
+      interval: 5s
+      timeout: 2s
+      retries: 5
+      start_period: 2s
+
+  
+
+

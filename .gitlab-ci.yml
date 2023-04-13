@@ -1,0 +1,10 @@
+install_deps:
+  stage: setup
+  image: node:19.4.0-bullseye-slim
+  script:
+    - cd node-postgres-sample
+    - npm ci
+  rules:
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  tags:
+    - docker
