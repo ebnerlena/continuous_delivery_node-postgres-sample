@@ -38,4 +38,4 @@ jobs:
           context: ./
           push: true
           tags: | 
-            ghcr.io/node-postgres-sample:latest
+            ghcr.io/ghcr.io/user/app:0.0.1
