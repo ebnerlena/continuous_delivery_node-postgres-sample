@@ -23,5 +23,4 @@ Baue fürgithub.com/derkoe/node-postgres-sample - ein Dockerfile - ein docker-co
 - Eigenes Projekt verwenden oder forken/kopieren von derkoe/node-postgres-sample
 - Docker Build ausführen
 - Pushen in ghcr.io oder auf Docker Hub
-- Repository URL an mich per E-Mail senden ckoeberl.lba@fh-salzburg.ac.at
 
