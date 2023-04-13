@@ -38,5 +38,4 @@ jobs:
           context: ./
           push: true
           tags: | 
-            node-postgres-sample:latest
             ghcr.io/node-postgres-sample:latest
