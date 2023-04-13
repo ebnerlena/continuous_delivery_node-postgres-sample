@@ -30,8 +30,8 @@ jobs:
         run: echo $GHRC_PAT | docker login ghcr.io -u ${{ github.actor }} — password-stdin
       - name: Build & Push Image
         run: |
-        docker build . - tag ghcr.io/ebnerlena/node-postgres-sample:latest
-        docker push ghcr.io/ebnerlena/node-postgres-sample:latest
+          docker build . - tag ghcr.io/ebnerlena/node-postgres-sample:latest
+          docker push ghcr.io/ebnerlena/node-postgres-sample:latest
       # - 
       #   name: Set up QEMU # installs QEMU static binaries for multi-arch builds
       #   uses: docker/setup-qemu-action@v2
